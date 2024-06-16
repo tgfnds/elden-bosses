@@ -51,10 +51,10 @@ const main = async () => {
   for (const entry of Object.values(toSeed)) {
     if (!entry.seed) continue;
     for (const boss of entry.bosses) {
-      data.push({
-        ...boss,
-        beaten: false,
-      });
+      // data.push({
+      //   ...boss,
+      //   beaten: false,
+      // });
     }
   }
 
