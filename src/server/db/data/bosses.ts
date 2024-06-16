@@ -1,7 +1,13 @@
-interface Boss {
+export interface BossSeed {
   name: string;
   type: "boss" | "great" | "invasion" | "legendary";
-  region: Region;
+  region:
+    | "Limgrave"
+    | "Weeping Peninsula"
+    | "Liurnia of the Lakes"
+    | "Altus Plateau"
+    | "Caelid"
+    | "Mt. Gelmir & Volcano Manor";
   location: string;
   hard: boolean;
   night: boolean;
@@ -12,7 +18,9 @@ type Region =
   | "Limgrave"
   | "Weeping Peninsula"
   | "Liurnia of the Lakes"
-  | "Altus Plateau";
+  | "Altus Plateau"
+  | "Caelid"
+  | "Mt. Gelmir & Volcano Manor";
 // | "Limgrave"
 // | "Liurnia"
 // | "Caelid"
@@ -23,6 +31,381 @@ type Region =
 // | "Ainsel River"
 // | "Deeproot Depths"
 // | "Crumbling Farum Azula";
+
+export const caelidBosses = [
+  {
+    name: "Magma Wyrm",
+    type: "boss",
+    region: "Caelid",
+    location: "Gael Tunnel",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Erdtree Avatar",
+    type: "boss",
+    region: "Caelid",
+    location: "West Minor Erdtree",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Erdtree Burial Watchdog x2",
+    type: "boss",
+    region: "Caelid",
+    location: "Minor Erdtree Catacombs",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Mad Pumpkin Head x2",
+    type: "boss",
+    region: "Caelid",
+    location: "Caelem Ruins Underground",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Knights Of The Great Jar x3",
+    type: "boss",
+    region: "Caelid",
+    location: "Caelid Colosseum",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Frenzied Duelist",
+    type: "boss",
+    region: "Caelid",
+    location: "Gael Tunnel",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Decaying Ekzykes",
+    type: "boss",
+    region: "Caelid",
+    location: "Caelid Highway South",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Cemetery Shade",
+    type: "boss",
+    region: "Caelid",
+    location: "Caelid Catacombs",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Night's Cavalry",
+    type: "boss",
+    region: "Caelid",
+    location: "Caelid Highway South",
+    hard: true,
+    night: true,
+  },
+  {
+    name: "Death Rite Bird",
+    type: "boss",
+    region: "Caelid",
+    location: "Southern Aeonia Swamp Bank",
+    hard: true,
+    night: true,
+  },
+  {
+    name: "Commander O'Neil",
+    type: "boss",
+    region: "Caelid",
+    location: "Aeonia Swamp",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Millicent",
+    type: "boss",
+    region: "Caelid",
+    location: "Aeonia Swamp",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Nox Swordstress & Nox Priest",
+    type: "boss",
+    region: "Caelid",
+    location: "Chair-Crypt Of Sellia",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Fallingstar Beast",
+    type: "boss",
+    region: "Caelid",
+    location: "Sellia Crystal Tunnel",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Cleanrot Knight x2",
+    type: "boss",
+    region: "Caelid",
+    location: "Abandoned Cave",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Battlemage Hugues",
+    type: "boss",
+    region: "Caelid",
+    location: "Sellia Evergaol",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Elder Dragon Greyoll",
+    type: "boss",
+    region: "Caelid",
+    location: "Outside Fort Faroth",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Crystalians x3",
+    type: "boss",
+    region: "Caelid",
+    location: "Sellia Hideaway",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Godskin Apostle",
+    type: "boss",
+    region: "Caelid",
+    location: "Divine Tower Of Caelid",
+    hard: true,
+    night: false,
+  },
+  {
+    name: "Bell Bearing Hunter",
+    type: "boss",
+    region: "Caelid",
+    location: "Isolated Merchant's Shack",
+    hard: true,
+    night: true,
+  },
+  {
+    name: "Putrid Avatar",
+    type: "boss",
+    region: "Caelid",
+    location: "East Minor Erdtree",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Beastman Of Farum Azula x2",
+    type: "boss",
+    region: "Caelid",
+    location: "Dragonbarrow Cave",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Night's Cavalry",
+    type: "boss",
+    region: "Caelid",
+    location: "Lenne's Rise Bridge",
+    hard: false,
+    night: true,
+  },
+  {
+    name: "Flying Dragon Greyoll",
+    type: "boss",
+    region: "Caelid",
+    location: "Farum Greatbridge",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Black Blade Kindred",
+    type: "boss",
+    region: "Caelid",
+    location: "Bestial Sanctum",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Gurranq",
+    type: "boss",
+    region: "Caelid",
+    location: "Bestial Sanctum",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Misbegotten Warrior & Crucible Knight",
+    type: "boss",
+    region: "Caelid",
+    location: "Redmane Castle",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Starscourge Radahn",
+    type: "legendary",
+    region: "Caelid",
+    location: "Redmane Castle",
+    hard: true,
+    night: false,
+  },
+  {
+    name: "Putrid Tree Spirit",
+    type: "boss",
+    region: "Caelid",
+    location: "War-Dead Catacombs",
+    hard: false,
+    night: false,
+  },
+] satisfies BossSeed[];
+
+export const mtGelmirAndVolcanoManor = [
+  {
+    name: "Anastasia, Tarnished-Eater",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Corpse-Stench Shack",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Grafted Scion",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "North Mt. Gelmir",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Demi-Human Queen Margot",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Volcano Cave",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Ulcerated Tree Spirit",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Minor Erdtree",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Kindred Of Rot x2",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Seethewater Cave",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Red Wolf Of The Champion",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Gelmir Hero's Grave",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Full-Grown Fallingstar Beast",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Ninth Mt. Gelmir Campsite",
+    hard: true,
+    night: false,
+  },
+  {
+    name: "Wormface",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Road Of Iniquity",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Fire Prelate",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Fort Laiedd",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Magma Wyrm",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "South Of Fort Laiedd",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Demi-Human Queen Maggie",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Hermit Village",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Abductor Virgin x2",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Volcano Manor",
+    hard: false,
+    night: false,
+    extra: "Accessible from Academy",
+  },
+  {
+    name: "Inquisitor Ghiza",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Volcano Manor Upper Floor",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Magma Wyrm",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Volcano Manor",
+    hard: false,
+    night: false,
+  },
+  {
+    name: "Godskin Noble",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Volcano Manor",
+    hard: true,
+    night: false,
+  },
+  {
+    name: "Rykard, Lord Of Blasphemy",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Volcano Manor",
+    hard: true,
+    night: false,
+  },
+  {
+    name: "Tanith's Knight",
+    type: "boss",
+    region: "Mt. Gelmir & Volcano Manor",
+    location: "Volcano Manor",
+    hard: false,
+    night: false,
+  },
+] satisfies BossSeed[];
 
 export const bosses = [
   {
@@ -865,4 +1248,8 @@ export const bosses = [
     hard: true,
     night: false,
   },
-] as const satisfies Boss[];
+  ...caelidBosses,
+  ...mtGelmirAndVolcanoManor,
+] satisfies BossSeed[];
+
+export type BossRegion = BossSeed["region"];
