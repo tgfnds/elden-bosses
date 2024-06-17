@@ -21,6 +21,8 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN bun run build
+RUN bun run db:push
+RUN bun run db:seed
 
 # Production image, copy all the files and run next
 FROM base AS runner
@@ -43,9 +45,6 @@ RUN chown nextjs:nodejs .next
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-RUN bun run db:push
-RUN bun run db:seed
 
 USER nextjs
 
