@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { api } from "~/trpc/react";
 
 interface Props {
-  id: number;
+  id: string;
   beaten: boolean;
 }
 

@@ -1,4 +1,4 @@
-import { bossRouter } from "~/server/api/routers/post";
+import { bossRouter } from "~/server/api/routers/boss";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 
 /**

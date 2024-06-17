@@ -10,7 +10,7 @@ export const bossRouter = createTRPCRouter({
   }),
 
   toggleBeaten: publicProcedure
-    .input(z.object({ id: z.number() }))
+    .input(z.object({ id: z.string().uuid() }))
     .mutation(({ ctx, input }) => {
       return ctx.db
         .update(bosses)
