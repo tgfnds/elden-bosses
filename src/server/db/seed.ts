@@ -1,13 +1,15 @@
-import { createClient } from "@libsql/client";
 import * as dotenv from "dotenv";
-import { drizzle } from "drizzle-orm/libsql";
+import { drizzle } from "drizzle-orm/node-postgres";
+import pg from "pg";
+
+const { Pool } = pg;
 
 import {
-  BossRegion,
-  BossSeed,
   bosses as bossesData,
   caelidBosses,
   mtGelmirAndVolcanoManor,
+  type BossRegion,
+  type BossSeed,
 } from "./data/bosses";
 import { bosses, type InsertBoss } from "./schema";
 
@@ -19,19 +21,19 @@ if (!("DATABASE_URL" in process.env))
 const toSeed = {
   Limgrave: {
     bosses: bossesData.filter((boss) => boss.region === "Limgrave") ?? [],
-    seed: false,
+    seed: true,
   },
   "Weeping Peninsula": {
     bosses: bossesData.filter((boss) => boss.region === "Weeping Peninsula"),
-    seed: false,
+    seed: true,
   },
   "Liurnia of the Lakes": {
     bosses: bossesData.filter((boss) => boss.region === "Liurnia of the Lakes"),
-    seed: false,
+    seed: true,
   },
   "Altus Plateau": {
     bosses: bossesData.filter((boss) => boss.region === "Altus Plateau"),
-    seed: false,
+    seed: true,
   },
   Caelid: {
     bosses: caelidBosses,
@@ -44,17 +46,19 @@ const toSeed = {
 } satisfies Record<BossRegion, { bosses: BossSeed[]; seed: boolean }>;
 
 const main = async () => {
-  const client = createClient({ url: process.env.DATABASE_URL! });
+  const client = new Pool({
+    connectionString: process.env.DATABASE_URL,
+  });
   const db = drizzle(client);
   const data: InsertBoss[] = [];
 
   for (const entry of Object.values(toSeed)) {
     if (!entry.seed) continue;
     for (const boss of entry.bosses) {
-      // data.push({
-      //   ...boss,
-      //   beaten: false,
-      // });
+      data.push({
+        ...boss,
+        beaten: false,
+      });
     }
   }
 

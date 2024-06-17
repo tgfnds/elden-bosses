@@ -1,13 +1,7 @@
 export interface BossSeed {
   name: string;
   type: "boss" | "great" | "invasion" | "legendary";
-  region:
-    | "Limgrave"
-    | "Weeping Peninsula"
-    | "Liurnia of the Lakes"
-    | "Altus Plateau"
-    | "Caelid"
-    | "Mt. Gelmir & Volcano Manor";
+  region: Region;
   location: string;
   hard: boolean;
   night: boolean;
